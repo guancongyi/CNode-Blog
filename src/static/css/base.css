@@ -1,0 +1,16 @@
+#header {
+    height: 64px;
+}
+
+#index_header {
+    height: 64px;
+    color: white;
+}
+
+#header .ant-menu-item {
+    line-height: 64px;
+    
+}
+#logo {
+    text-align: center;
+}

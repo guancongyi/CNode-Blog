@@ -1,0 +1,36 @@
+
+.wrap{
+    width: 880px;
+
+}
+
+.nav{
+    border-bottom: 1px solid;
+    display: flex;
+    font: 14px;
+}
+
+.nav a{
+    flex:1;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+.nav .active {
+    color: red;
+}
+
+.index_nav{
+    display: flex;
+}
+
+.index_nav a{
+    flex:1;
+    color: gray;
+    font: 12px/24px;
+}
+
+.index_nav .active{
+    color: hotpink;
+}
