@@ -5,7 +5,6 @@ import {nav} from '../router/index';
 
 function Header() {
     let {pathname} = useLocation();
-    console.log(pathname)
     let activeIndex = nav.findIndex((item)=>item.to===pathname);
     // let activeIndex = nav.findIndex(item=>item.to===pathname)
     return <Affix offsetTop={0}>
@@ -13,7 +12,7 @@ function Header() {
                 <div className="wrap">
                     <Row>
                         <Col xs={24} sm={4}>
-                            <h1 id="icon"><Link to="/">开课吧</Link></h1>
+                            <h1 id="icon"><Link to="/">CNode</Link></h1>
                         </Col>
                         <Col xs={24} sm={20}>
                             <Menu 

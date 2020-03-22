@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 function GetstartPage(){
     return (
@@ -7,3 +7,4 @@ function GetstartPage(){
 }
 
 export default GetstartPage
+ 

@@ -7,41 +7,28 @@ import { useGetTopics } from '../../store/action/actions'
 
 function IndexContent() {
     let { search } = useLocation();
-    let { tab } = qs.parse(search.substr(1));
-    let page = 1;
+    let { tab, page} = qs.parse(search.substr(1));
+    
     // let tab = query.tab;
-    // console.log(tab)
+    // console.log(tab,page)
     let getData = useGetTopics();
 
     // // console.log(getData)
     useEffect(() => {
         getData(page, tab);
-        console.log(2)
-    }, [tab])
+    }, [tab,page])
 
-    let { data } = useSelector(state => state.topics);
-    return <List>
-        {data.map((item, id) => {
-            console.log(item)
-            return <List.Item><a link="">{item.title}</a></List.Item>
-        })}
+    let { data, loading } = useSelector(state => state.getTopics);
+    return <List
+        loading={loading}
+        dataSource={data}
+        renderItem={
+            (item) => {
+                let { id, title } = item;
+                return <List.Item><Link to={`/topic/${id}`}>{title}</Link></List.Item>
+            }
+        }>
     </List>
-
-
-
-
-    // return <List 
-    //         loading={loading}
-    //         dataSource={data}
-    //         style={{
-    //             padding: '0 15px'
-    //         }}
-    //         renderItem={(itemData)=>{
-    //             let {id,title} = itemData;
-    //             return <List.Item><Link to={`/topic/${id}`}>{title}</Link></List.Item>
-    //         }}
-    //     >
-    //     </List>
 
 }
 

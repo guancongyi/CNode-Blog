@@ -5,18 +5,27 @@ import { useDispatch } from 'react-redux';
 function useGetTopics() {
     let dispatch = useDispatch()
     return function(page=1,tab='all', limit=15, mrender=true) {
-        console.log(1)
+        dispatch({ type: 'topics_loading'})
         axios.get(`https://cnodejs.org/api/v1/topics?tab=${tab}&page=${page}&limit=${limit}&mrender=${mrender}`).then((res) => {
             //console.log(res)    
             dispatch({ type: 'topics_loadover', data: res.data.data })
         })
     }
+}
 
-
+function useGetTopic() {
+    let dispatch = useDispatch()
+    return function(id=null) {
+        dispatch({ type: 'topic_loading'})
+        axios.get(`https://cnodejs.org/api/v1/topic/${id}`).then((res) => {
+            //console.log(res)    
+            dispatch({ type: 'topic_loadover', data: res.data.data })
+        })
+    }
 }
 
 
-export { useGetTopics }
+export { useGetTopics, useGetTopic }
 
 
 // import axios from "axios";

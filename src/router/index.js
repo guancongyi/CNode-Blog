@@ -1,6 +1,6 @@
 import React from 'react';
-import { Redirect } from "react-router-dom"
 import IndexPage from '../views/index/index'
+import TopicPage from '../views/topic/index'
 import AboutPage from '../views/about/about'
 import GetstartPage from '../views/getstart/getstart'
 
@@ -18,7 +18,7 @@ const routes = [
         path:'/topic/:id',
         exact:true,
         render(props){
-            return <IndexPage {...props}/>
+            return <TopicPage {...props}/>
         }
     },
     {

@@ -1,23 +1,20 @@
-
-function getTopics(getTopics={
+function getTopic(getTopic={
     loading:true,
     data:[]
-},action){
+}, action){
     switch(action.type){
-        case "topics_loading":
+        case "topic_loading":
             return {
                 loading:true,
                 data:[]
             }
-        case "topics_loadover":
+        case "topic_loadover":
             return {
                 loading:false,
                 data:action.data
             }
     }
-    return getTopics;
+    return getTopic;
 }
 
-
-
-export default getTopics;
+export default getTopic
