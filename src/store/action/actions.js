@@ -20,6 +20,13 @@ function useGetTopic() {
         axios.get(`https://cnodejs.org/api/v1/topic/${id}`).then((res) => {
             //console.log(res)    
             dispatch({ type: 'topic_loadover', data: res.data.data })
+        }).catch((err)=>{
+            console.log(err.response.data.error_msg)
+            dispatch({
+                type: 'topic_error',
+                errMsg: err.response.data.error_msg
+            })
+            
         })
     }
 }

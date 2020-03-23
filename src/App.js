@@ -6,7 +6,6 @@ import {routes} from "./router/index"
 
 function App(){
     return (
-       
         <Layout>
             <Header/>
             <Layout.Content>

@@ -1,6 +1,8 @@
 function getTopic(getTopic={
     loading:true,
-    data:[]
+    data:[],
+    isError: false,
+    errMsg:""
 }, action){
     switch(action.type){
         case "topic_loading":
@@ -12,6 +14,13 @@ function getTopic(getTopic={
             return {
                 loading:false,
                 data:action.data
+            }
+        case "topic_error":
+            return {
+                loading:true,
+                data:[],
+                isError: true,
+                errMsg:action.message
             }
     }
     return getTopic;

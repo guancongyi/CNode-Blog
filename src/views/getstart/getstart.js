@@ -1,8 +1,13 @@
 import React from 'react';
+import { Card } from 'antd';
 
 function GetstartPage(){
     return (
-        <div>Getstart</div>
+        <Card
+            title={"Get Started"}
+            type={"inner"}
+            
+        >Getstart</Card>
     );
 }
 
